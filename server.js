@@ -1,6 +1,8 @@
 const express = require("express");
 
 const signup = require("./signup");
+
+
 const login = require("./login");
 
 const app = express();
@@ -8,7 +10,6 @@ const app = express();
 app.use(express.json());
 
 
-// ================= SIGNUP =================
 
 app.post("/signup", async (req, res) => {
 
@@ -16,7 +17,7 @@ app.post("/signup", async (req, res) => {
 
     if (!email || !password) {
         return res.status(400).json({
-            message: "Email and password are required"
+            message: "Email password  requried"
         });
     }
 
@@ -30,7 +31,6 @@ app.post("/signup", async (req, res) => {
 });
 
 
-// ================= LOGIN =================
 
 app.post("/login", async (req, res) => {
 
@@ -38,7 +38,7 @@ app.post("/login", async (req, res) => {
 
     if (!email || !password) {
         return res.status(400).json({
-            message: "Email and password are required"
+            message: "Email password are required"
         });
     }
 
@@ -52,7 +52,6 @@ app.post("/login", async (req, res) => {
 });
 
 
-// ================= SERVER =================
 
 app.listen(5000, () => {
     console.log("Server running on port 5000");
